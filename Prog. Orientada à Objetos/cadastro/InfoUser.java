@@ -30,5 +30,6 @@ public class InfoUser {
         System.out.println("Bairro: " + bairro);
         System.out.println("CEP: " + cep);
         System.out.println("Cidade: " + cidade + " - " + uf);
+        teclado.close();
     }
 }
