@@ -39,14 +39,19 @@ public class Projeto {
         }
         
     
-    if(h2.vemDepois(h1)) {
-        System.out.println("h2 vem depois de h1");
+        if(h2.vemDepois(h1)) {
+            System.out.println("h2 vem depois de h1");
+        }
+        if (h2.vemAntes(h1)) {
+            System.out.println("h2 vem antes de h1");
+        }
+        if (h2.eIgual(h1)) {
+            System.out.println("h2 é o mesmo horário que h1");
+        }
+        
+        FusoHorario h7 = new FusoHorario(8, 30, 10, 3);
+        System.out.println(h7.getHorario());
+
     }
-    if (h2.vemAntes(h1)) {
-        System.out.println("h2 vem antes de h1");
-    }
-    if (h2.eIgual(h1)) {
-        System.out.println("h2 é o mesmo horário que h1");
-    }
-}}
+}
 
