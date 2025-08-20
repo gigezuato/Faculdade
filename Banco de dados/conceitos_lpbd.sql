@@ -1,0 +1,20 @@
+CREATE DATABASE db_lpbd
+USE db_lpbd
+
+CREATE TABLE alunos (
+id SMALLINT NOT NULL PRIMARY KEY IDENTITY,
+nome VARCHAR(40) NOT NULL,
+cpf CHAR(11) NOT NULL UNIQUE,
+rg CHAR(9) NOT NULL UNIQUE,
+endereco VARCHAR(50) NOT NULL,
+sexo CHAR(1) NOT NULL CHECK (sexo='M' OR sexo='F'),
+dt_nasc DATE NOT NULL
+)
+
+INSERT INTO alunos VALUES ('Giovana', '11111111111', '222222222', 'Rua X Bairro Y', 'F', '2005-03-10')
+
+INSERT INTO alunos VALUES ('Giovana', '22222222222', '333333333', 'Rua Z', 'M', '09/9/2009')
+
+INSERT INTO alunos VALUES ('Joaquina', '12345678911', '123456789', 'Rua A', 'F', '20100205')
+
+SELECT * FROM alunos
