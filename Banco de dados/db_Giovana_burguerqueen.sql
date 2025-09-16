@@ -2,6 +2,7 @@ CREATE DATABASE db_burguerqueen
 
 USE db_burguerqueen
 
+-- Tabelas
 CREATE TABLE telefone (
 numero_telefone CHAR(11) NOT NULL PRIMARY KEY
 )
@@ -106,3 +107,43 @@ quantidade SMALLINT NOT NULL,
 codigo_pedido SMALLINT REFERENCES pedido(codigo_pedido),
 codigo_bebida SMALLINT REFERENCES bebida(codigo_bebida)
 )
+
+-- Inserts
+INSERT INTO telefone VALUES ('12222222222')
+INSERT INTO telefone VALUES ('18888888888')
+INSERT INTO telefone VALUES ('14444444444')
+
+INSERT INTO cep VALUES ('15555555')
+INSERT INTO cep VALUES ('14444444')
+INSERT INTO cep VALUES ('13333333')
+
+INSERT INTO cidade VALUES ('1', 'Olímpia')
+INSERT INTO cidade VALUES ('2', 'São José do Rio Preto')
+
+INSERT INTO uf VALUES ('SP', 'São Paulo')
+INSERT INTO uf VALUES ('MG', 'Minas Gerais')
+
+INSERT INTO pessoa VALUES ('Giovana', '11111111111', 'giovana@gmail.com', 'Rua X', '12222222222', '15555555', '1', 'SP')
+INSERT INTO pessoa VALUES ('Jorge', '22222222222', 'jorge@gmail.com', 'Rua Y', '18888888888', '14444444', '2', 'MG')
+INSERT INTO pessoa VALUES ('Marcos', '33333333333', 'marcos@gmail.com', 'Rua Z', '14444444444', '13333333', '1', 'SP')
+
+INSERT INTO cliente VALUES ('Muito bom', '1')
+INSERT INTO funcionario VALUES ('1856.50', '4')
+INSERT INTO entregador VALUES ('104.52', '3')
+
+-- tive que alterar o tipo da data_hora_saida para DATETIME2
+ALTER TABLE entrega DROP COLUMN data_hora_saida;
+ALTER TABLE entrega ADD data_hora_saida DATETIME2 NOT NULL DEFAULT SYSDATETIME();
+
+INSERT INTO entrega VALUES ('Em andamento', '1','2025-09-10 10:32:00')
+
+INSERT INTO pedido VALUES ('2025-09-10', 'Concluído', '56.90', '1', '3', '2')
+
+INSERT INTO categoria VALUES ('Vegetarianos')
+INSERT INTO fabricante VALUES ('Coca-Cola')
+
+INSERT INTO lanche VALUES ('X-Salada', '523', '42.30', '1')
+INSERT INTO bebida VALUES ('Fanta uva', '15', '14.60', '1')
+
+INSERT INTO pedido_lanche VALUES ('1', '1', '1')
+INSERT INTO pedido_bebida VALUES ('1', '1', '1')
