@@ -3,8 +3,7 @@
 
 int main(){
     int vetor[10];
-    int i;
-    for(i = 0; i < 10; i++){
+    for(int i = 0; i < 10; i++){
         printf("Digite o %d valor: ", i+1);
         scanf("%d", &vetor[i]);
     }
@@ -12,7 +11,7 @@ int main(){
     int menor = vetor[0];
     int maior = vetor[0];
 
-    for (i = 1; i < 10; i++){
+    for (int i = 1; i < 10; i++){
         if (vetor[i] > maior){
             maior = vetor[i];
         }

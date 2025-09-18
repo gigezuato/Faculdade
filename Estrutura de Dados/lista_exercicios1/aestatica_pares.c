@@ -3,15 +3,14 @@
 
 int main(){
     int pares[10];
-    int i;
     int numero_par = 0;
 
-    for(i = 0; i < 10; i++) {
+    for(int i = 0; i < 10; i++) {
         pares[i] = numero_par;
         numero_par += 2;
     }
     printf("Valores do vetor: \n");
-    for(i = 0; i < 10; i++) {
+    for(int i = 0; i < 10; i++) {
         printf("%d \n", pares[i]);
     }
     return 0;

@@ -6,9 +6,8 @@
 
 int main(){
     int vetor[10];
-    int i;
 
-    for (i = 0; i < 10; i++){
+    for (int i = 0; i < 10; i++){
         printf("Digite o %d valor: ", i+1);
         scanf("%d", &vetor[i]);
     }
@@ -16,7 +15,7 @@ int main(){
     int cont_par = 0;
     int cont_impar = 0;
 
-    for (i = 0; i < 10; i++){
+    for (int i = 0; i < 10; i++){
         if (vetor[i] % 2 == 0){
             cont_par += 1;
         } else {

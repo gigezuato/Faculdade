@@ -15,8 +15,7 @@ int main() {
 
     int *vetor;
     vetor = malloc(tamanho * sizeof(int));
-    int i;
-    for (i= 0; i < tamanho; i++) {
+    for (int i= 0; i < tamanho; i++) {
         printf("Digite o %d valor: ", i+1);
         scanf("%d", &vetor[i]);
     }
@@ -31,13 +30,12 @@ int maior_que_media(int *v, int qtde){
     float soma = 0;
     float media = 0;
     int cont_maior = 0;
-    int i;
 
-    for(i = 0; i < qtde; i++){
+    for(int i = 0; i < qtde; i++){
         soma += *(v + i);
     }
     media = soma / qtde;
-    for(i = 0; i < qtde; i++){
+    for(int i = 0; i < qtde; i++){
         if (*(v + i) > media) {
             cont_maior += 1;
         }

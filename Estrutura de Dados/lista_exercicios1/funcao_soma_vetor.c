@@ -7,14 +7,13 @@ int soma_vetor(int *v, int qtde);
 int main() {
     int tamanho;
     int *vetor;
-    int i = 0;
 
     printf("Digite a quantidade de elementos: ");
     scanf("%d", &tamanho);
 
     vetor = malloc(tamanho * sizeof(int));
 
-    for (i=0; i < tamanho; i++) {
+    for (int i = 0; i < tamanho; i++) {
         printf("Digite o %d valor: ", i+1);
         scanf("%d", &vetor[i]);
     }
@@ -28,9 +27,9 @@ int main() {
 }
 
 int soma_vetor(int *v, int qtde){
-    int soma = 0, i = 0;
+    int soma = 0;
 
-    for (i = 0; i < qtde; i++){
+    for (int i = 0; i < qtde; i++){
         soma += v[i];
     }
     return soma;

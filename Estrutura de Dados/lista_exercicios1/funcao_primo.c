@@ -19,9 +19,8 @@ int main() {
 
 bool e_primo(int n){
     int cont_div = 0;
-    int i = 1;
 
-    for (i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i++) {
         if (n % i == 0){
             cont_div += 1;
         }

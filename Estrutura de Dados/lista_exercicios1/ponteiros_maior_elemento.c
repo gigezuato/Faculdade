@@ -12,8 +12,7 @@ int main() {
 
     vetor = malloc(tamanho * sizeof(int));
 
-    int i;
-    for (i = 0; i < tamanho; i++) {
+    for (int i = 0; i < tamanho; i++) {
         printf("Digite o %d elemento: ", i+1);
         scanf("%d", &vetor[i]);
     }
@@ -27,9 +26,8 @@ int main() {
 
 int maior_elemento(int *v, int qtde){
     int maior = *v;
-    int i;
 
-    for(i = 1; i < qtde; i++) {
+    for(int i = 1; i < qtde; i++) {
         if (*(v + i) > maior) {
             maior = *(v + i);
         }
