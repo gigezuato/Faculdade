@@ -1,6 +1,7 @@
 package agenda;
 
 import javax.swing.*;
+import java.awt.event.*;;
 
 public class Principal extends Win{
     private JLabel labelId, labelNome, labelSexo, labelTelefone;
@@ -43,5 +44,43 @@ public class Principal extends Win{
         addRow(amigo);
         addRow(cliente);
         addRow(inserir, cancelar);
+        InserirHandler inserirhandler = new InserirHandler();
+        inserir.addActionListener(inserirhandler);
+    }
+    private class InserirHandler implements ActionListener {
+        @Override
+        /*public void actionPerformed(ActionEvent e) {
+            String nome = Principal.this.nome.getText();
+            JOptionPane.showMessageDialog(
+                Principal.this,
+                "Olá " + nome,
+                "Mensagem",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+        }*/
+        public void actionPerformed(ActionEvent e){
+            String nome = Principal.this.nome.getText();
+            String telefone = Principal.this.telefone.getText();
+            String tipo = pessoa.isSelected() ? "Pessoa" : "Empresa";
+            String tipo_sexo = sexo.getSelectedIndex() == 0 ? "Masculino" : "Feminino";
+            String amigo_cliente = "";
+
+            if(amigo.isSelected() && cliente.isSelected()){
+                amigo_cliente = "Amigo e Cliente";
+            } else if (cliente.isSelected()){
+                amigo_cliente = "Cliente";
+            } else if (amigo.isSelected()){
+                amigo_cliente = "Amigo";
+            }
+
+            String mensagem = "Nome: " + nome + "\nTipo: " + tipo + "\nSexo: " + tipo_sexo + "\nTelefone: " + telefone + "\n" + amigo_cliente;
+            
+            JOptionPane.showMessageDialog(
+                Principal.this,
+                mensagem,
+                "Mensagem",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+        }
     }
 }
