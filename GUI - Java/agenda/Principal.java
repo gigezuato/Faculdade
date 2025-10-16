@@ -44,12 +44,38 @@ public class Principal extends Win{
         addRow(amigo);
         addRow(cliente);
         addRow(inserir, cancelar);
-        InserirHandler inserirhandler = new InserirHandler();
-        inserir.addActionListener(inserirhandler);
+        // Técnica 1 Eventos e Técnica 2 (segundo modo)
+        //InserirHandler inserirhandler = new InserirHandler();
+        //inserir.addActionListener(inserirhandler);
+
+        // Técnica 2 Eventos (primeiro modo)
+        /*inserir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nome = Principal.this.nome.getText();
+                JOptionPane.showMessageDialog(Principal.this,
+                    "Olá " + nome, "Mensagem",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
+            }
+        });*/     
+
+        // Técnica 3 Eventos
+        /*inserir.addActionListener((ActionEvent e) -> {
+            String nome = Principal.this.nome.getText();
+            JOptionPane.showMessageDialog(Principal.this,
+                "Olá " + nome, "Mensagem",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+        });*/
+
+        // Técnica 4 Eventos
+        inserir.addActionListener(this::inserir_click);
     }
-    private class InserirHandler implements ActionListener {
+    // Técnica 1 Eventos
+    /*private class InserirHandler implements ActionListener {
         @Override
-        /*public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) {
             String nome = Principal.this.nome.getText();
             JOptionPane.showMessageDialog(
                 Principal.this,
@@ -58,7 +84,7 @@ public class Principal extends Win{
                 JOptionPane.INFORMATION_MESSAGE
             );
         }*/
-        public void actionPerformed(ActionEvent e){
+        /*public void actionPerformed(ActionEvent e){
             String nome = Principal.this.nome.getText();
             String telefone = Principal.this.telefone.getText();
             String tipo = pessoa.isSelected() ? "Pessoa" : "Empresa";
@@ -81,6 +107,26 @@ public class Principal extends Win{
                 "Mensagem",
                 JOptionPane.INFORMATION_MESSAGE
             );
+        }*/
+        
+        // Técnica 2 Eventos (segundo modo)
+        /*private class InserirHandler implements ActionListener {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                String nome = Principal.this.nome.getText();
+                JOptionPane.showMessageDialog(Principal.this,
+                    "Olá " + nome, "Mensagem",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
+            }
+        }*/
+
+        // Técnica 4 Eventos
+        private void inserir_click(ActionEvent e) {
+            String nome = Principal.this.nome.getText();
+            JOptionPane.showMessageDialog(Principal.this,
+                "Olá " + nome, "Mensagem",
+                JOptionPane.INFORMATION_MESSAGE
+            );
         }
-    }
 }
