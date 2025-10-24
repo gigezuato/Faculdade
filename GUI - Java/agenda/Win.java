@@ -1,5 +1,8 @@
 package agenda;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
 import javax.swing.*;
 
 public abstract class Win extends JFrame {
@@ -9,6 +12,8 @@ public abstract class Win extends JFrame {
         setupFrame(title, x, y, width, height, closing);
         setupComponents();
         setVisible(true);
+        // FlowLayout
+        // setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
     }
 
     public Win(String title, int width, int height, int closing){
